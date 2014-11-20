@@ -26,8 +26,12 @@ PRODUCT_COPY_FILES += \
     device/sony/sirius/rootdir/logo.rle:root/logo.rle \
     device/sony/sirius/rootdir/system/etc/BCM4339.hcd:system/etc/firmware/BCM43xx.hcd \
     device/sony/sirius/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
+    device/sony/sirius/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     device/sony/sirius/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/sony/sirius/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    device/sony/sirius/recovery/recovery.sh:root/recovery.sh \
+    device/sony/sirius/recovery/ramdisk-recovery.cpio:root/recovery/ramdisk-recovery.cpio \
+    device/sony/sirius/recovery/sbin/busybox_static:root/sbin/busybox_static
 
 PRODUCT_NAME := aosp_d6503
 PRODUCT_DEVICE := sirius
