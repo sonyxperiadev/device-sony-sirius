@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
 $(call inherit-product-if-exists, device/sony/shinano/device.mk)
 $(call inherit-product-if-exists, vendor/sony/sirius/sirius-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
+#$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 
 PRODUCT_COPY_FILES += \
     device/sony/sirius/rootdir/logo.rle:root/logo.rle \
