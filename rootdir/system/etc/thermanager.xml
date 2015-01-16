@@ -132,7 +132,7 @@
 	</control>
 
 	<control name="cpu">
-		<mitigation level="off"><value resource="cpu">2150400</value></mitigation>
+		<mitigation level="off"><value resource="cpu">2265600</value></mitigation>
 		<mitigation level="1"><value resource="cpu">1958400</value></mitigation>
 		<mitigation level="2"><value resource="cpu">1728000</value></mitigation>
 		<mitigation level="3"><value resource="cpu">1574400</value></mitigation>
@@ -279,8 +279,11 @@
 		<threshold>
 			<mitigation name="cpu" level="off" />
 		</threshold>
-		<threshold trigger="80" clear="78">
+		<threshold trigger="80" clear="75">
 			<mitigation name="cpu" level="2" />
+		</threshold>
+		<threshold trigger="85" clear="80">
+			<mitigation name="cpu" level="3" />
 		</threshold>
 		<threshold trigger="90" clear="85">
 			<mitigation name="cpu" level="4" />
