@@ -25,7 +25,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 PRODUCT_COPY_FILES += \
     device/sony/sirius/rootdir/logo.rle:root/logo.rle \
     device/sony/sirius/rootdir/system/etc/BCM4339.hcd:system/etc/firmware/BCM43xx.hcd \
-    device/sony/sirius/rootdir/system/etc/bcmdhd.cal:system/etc/firmware/wlan/bcmdhd/bcmdhd.cal \
+    device/sony/sirius/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     device/sony/sirius/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
     device/sony/sirius/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
     device/sony/sirius/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
