@@ -1,4 +1,4 @@
-# Copyright 2014 The Android Open Source Project
+# Copyright (C) 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-TARGET_KERNEL_CONFIG := aosp_shinano_sirius_defconfig
+SONY_SIRIUS_ROOTDIR := device/sony/sirius/rootdir
 
-DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/sirius/overlay
+TARGET_KERNEL_CONFIG := aosp_shinano_sirius_defconfig
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/telephony.mk)
@@ -26,46 +25,49 @@ $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 $(call inherit-product-if-exists, prebuilts/chromium/webview_prebuilt.mk)
 $(call inherit-product-if-exists, vendor/google/products/gms.mk)
 
-PRODUCT_COPY_FILES += \
-    device/sony/sirius/rootdir/system/etc/BCM4339.hcd:system/etc/firmware/BCM43xx.hcd \
-    device/sony/sirius/rootdir/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
-    device/sony/sirius/rootdir/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
-    device/sony/sirius/rootdir/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
-    device/sony/sirius/rootdir/system/etc/thermanager.xml:system/etc/thermanager.xml \
-    device/sony/sirius/rootdir/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/sony/sirius/rootdir/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
-    device/sony/sirius/rootdir/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+DEVICE_PACKAGE_OVERLAYS += \
+    device/sony/sirius/overlay
 
 PRODUCT_COPY_FILES += \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/coldboot.patch:/system/etc/tfa98xx/coldboot.patch \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/TFA9890.patch:/system/etc/tfa98xx/TFA9890.patch \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/TFA9890_top.config:/system/etc/tfa98xx/TFA9890_top.config \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/TFA9890_btm.config:/system/etc/tfa98xx/TFA9890_btm.config \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/btm.speaker:/system/etc/tfa98xx/btm.speaker \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/top.speaker:/system/etc/tfa98xx/top.speaker \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeaker_top.preset:/system/etc/tfa98xx/HiFiSpeaker_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeaker_btm.preset:/system/etc/tfa98xx/HiFiSpeaker_btm.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerRing_top.preset:/system/etc/tfa98xx/HiFiSpeakerRing_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerRing_btm.preset:/system/etc/tfa98xx/HiFiSpeakerRing_btm.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerSforce_top.preset:/system/etc/tfa98xx/HiFiSpeakerSforce_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerSforce_btm.preset:/system/etc/tfa98xx/HiFiSpeakerSforce_btm.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallSpeaker_top.preset:/system/etc/tfa98xx/VoiceCallSpeaker_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallSpeaker_btm.preset:/system/etc/tfa98xx/VoiceCallSpeaker_btm.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/FMSpeaker_top.preset:/system/etc/tfa98xx/FMSpeaker_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/FMSpeaker_btm.preset:/system/etc/tfa98xx/FMSpeaker_btm.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeaker_top.eq:/system/etc/tfa98xx/HiFiSpeaker_top.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeaker_btm.eq:/system/etc/tfa98xx/HiFiSpeaker_btm.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerRing_top.eq:/system/etc/tfa98xx/HiFiSpeakerRing_top.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerRing_btm.eq:/system/etc/tfa98xx/HiFiSpeakerRing_btm.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerSforce_top.eq:/system/etc/tfa98xx/HiFiSpeakerSforce_top.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/HiFiSpeakerSforce_btm.eq:/system/etc/tfa98xx/HiFiSpeakerSforce_btm.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallSpeaker_top.eq:/system/etc/tfa98xx/VoiceCallSpeaker_top.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallSpeaker_btm.eq:/system/etc/tfa98xx/VoiceCallSpeaker_btm.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/FMSpeaker_top.eq:/system/etc/tfa98xx/FMSpeaker_top.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/FMSpeaker_btm.eq:/system/etc/tfa98xx/FMSpeaker_btm.eq \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/TFA9890_Receiver.config:/system/etc/tfa98xx/TFA9890_Receiver.config \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.preset:/system/etc/tfa98xx/VoiceCallEarpice_top.preset \
-    device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.eq:/system/etc/tfa98xx/VoiceCallEarpice_top.eq
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/BCM4339.hcd:system/etc/firmware/BCM43xx.hcd \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/sensors_calib.conf:system/etc/sensors_calib.conf \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/sensor_def_qcomdev.conf:system/etc/sensor_def_qcomdev.conf \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/thermanager.xml:system/etc/thermanager.xml \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/mixer_paths.xml:system/etc/mixer_paths.xml
+
+PRODUCT_COPY_FILES += \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/coldboot.patch:/system/etc/tfa98xx/coldboot.patch \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/TFA9890.patch:/system/etc/tfa98xx/TFA9890.patch \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/TFA9890_top.config:/system/etc/tfa98xx/TFA9890_top.config \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/TFA9890_btm.config:/system/etc/tfa98xx/TFA9890_btm.config \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/btm.speaker:/system/etc/tfa98xx/btm.speaker \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/top.speaker:/system/etc/tfa98xx/top.speaker \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeaker_top.preset:/system/etc/tfa98xx/HiFiSpeaker_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeaker_btm.preset:/system/etc/tfa98xx/HiFiSpeaker_btm.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerRing_top.preset:/system/etc/tfa98xx/HiFiSpeakerRing_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerRing_btm.preset:/system/etc/tfa98xx/HiFiSpeakerRing_btm.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerSforce_top.preset:/system/etc/tfa98xx/HiFiSpeakerSforce_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerSforce_btm.preset:/system/etc/tfa98xx/HiFiSpeakerSforce_btm.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallSpeaker_top.preset:/system/etc/tfa98xx/VoiceCallSpeaker_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallSpeaker_btm.preset:/system/etc/tfa98xx/VoiceCallSpeaker_btm.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/FMSpeaker_top.preset:/system/etc/tfa98xx/FMSpeaker_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/FMSpeaker_btm.preset:/system/etc/tfa98xx/FMSpeaker_btm.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeaker_top.eq:/system/etc/tfa98xx/HiFiSpeaker_top.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeaker_btm.eq:/system/etc/tfa98xx/HiFiSpeaker_btm.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerRing_top.eq:/system/etc/tfa98xx/HiFiSpeakerRing_top.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerRing_btm.eq:/system/etc/tfa98xx/HiFiSpeakerRing_btm.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerSforce_top.eq:/system/etc/tfa98xx/HiFiSpeakerSforce_top.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/HiFiSpeakerSforce_btm.eq:/system/etc/tfa98xx/HiFiSpeakerSforce_btm.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallSpeaker_top.eq:/system/etc/tfa98xx/VoiceCallSpeaker_top.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallSpeaker_btm.eq:/system/etc/tfa98xx/VoiceCallSpeaker_btm.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/FMSpeaker_top.eq:/system/etc/tfa98xx/FMSpeaker_top.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/FMSpeaker_btm.eq:/system/etc/tfa98xx/FMSpeaker_btm.eq \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/TFA9890_Receiver.config:/system/etc/tfa98xx/TFA9890_Receiver.config \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallEarpice_top.preset:/system/etc/tfa98xx/VoiceCallEarpice_top.preset \
+    $(SONY_SIRIUS_ROOTDIR)/system/etc/tfa98xx/VoiceCallEarpice_top.eq:/system/etc/tfa98xx/VoiceCallEarpice_top.eq
 
 PRODUCT_NAME := aosp_d6503
 PRODUCT_DEVICE := sirius
