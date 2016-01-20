@@ -67,6 +67,10 @@ PRODUCT_COPY_FILES += \
     device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.preset:/system/etc/tfa98xx/VoiceCallEarpice_top.preset \
     device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.eq:/system/etc/tfa98xx/VoiceCallEarpice_top.eq
 
+# NFC config
+PRODUCT_PACKAGES += nfc_nci.sirius
+ADDITIONAL_DEFAULT_PROPERTIES += ro.hardware.nfc_nci=sirius
+
 PRODUCT_NAME := aosp_d6503
 PRODUCT_DEVICE := sirius
 PRODUCT_MODEL := Xperia Z2 (AOSP)
