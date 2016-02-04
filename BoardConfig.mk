@@ -20,9 +20,8 @@ TARGET_BOOTLOADER_BOARD_NAME := D6503
 #Reserve space for data encryption (12656259072-16384)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
-#BOARD_KERNEL_CMDLINE += mem=2690M@255M
+BOARD_KERNEL_CMDLINE += androidboot.hardware=sirius
 
 PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/sirius/kernel-headers
 
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/max1187x/power/wakeup"
-TARGET_TAP_TO_WAKE_STRING := true
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/max1187x/wakeup_gesture"

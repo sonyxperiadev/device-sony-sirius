@@ -68,9 +68,23 @@ PRODUCT_COPY_FILES += \
     device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.preset:/system/etc/tfa98xx/VoiceCallEarpice_top.preset \
     device/sony/sirius/rootdir/system/etc/tfa98xx/VoiceCallEarpice_top.eq:/system/etc/tfa98xx/VoiceCallEarpice_top.eq
 
+# Device Init
+PRODUCT_PACKAGES += \
+    init.recovery.sirius \
+    init.sirius \
+    ueventd.sirius
+
+# Lights
+PRODUCT_PACKAGES += \
+    lights.sirius
+
+# Simple PowerHAL
+PRODUCT_PACKAGES += \
+    power.sirius
+
 # NFC config
-PRODUCT_PACKAGES += nfc_nci.sirius
-ADDITIONAL_DEFAULT_PROPERTIES += ro.hardware.nfc_nci=sirius
+PRODUCT_PACKAGES += \
+    nfc_nci.sirius
 
 PRODUCT_NAME := aosp_d6503
 PRODUCT_DEVICE := sirius
