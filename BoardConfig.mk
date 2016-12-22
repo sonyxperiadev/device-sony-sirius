@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Device path
+DEVICE_PATH := device/sony/sirius
+
 include device/sony/shinano/PlatformConfig.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := D6503
@@ -21,6 +24,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12656242688
 
 BOARD_KERNEL_CMDLINE += androidboot.hardware=sirius
 
-PRODUCT_VENDOR_KERNEL_HEADERS += device/sony/sirius/kernel-headers
+PRODUCT_VENDOR_KERNEL_HEADERS += $(DEVICE_PATH)/kernel-headers
 
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/max1187x/wakeup_gesture"
